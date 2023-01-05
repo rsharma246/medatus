@@ -1,0 +1,41 @@
+@import './_shared/scss/variables';
+@import './_shared/scss/mixins';
+
+@mixin generate-button-bordered($color, $border, $color-hover, $color-pressed, $btn-text-color) {
+  border: 2px $border $card-background;
+  background: $color;
+  color: $btn-text-color;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+
+  &:hover {
+    color: $btn-text-color;
+    background: $color-hover;
+  }
+
+  &:active {
+    border-color: $color-pressed;
+    background: $color-pressed;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    border-color: $button-disabled;
+    color: $button-text-disabled;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
+
+@mixin generate-outlined-buttons {
+  &.button-style-outlined {
+    &.button-color-default {
+      @include generate-button-bordered($default, dotted, $default-hover, $default-pressed, $card-background)
+    }
+    &.button-color-primary {
+      @include generate-button-bordered($primary, dotted, $primary-hover, $primary-pressed, $card-background)
+    }
+    &.button-color-secondary {
+      @include generate-button-bordered($secondary, dotted, $secondary-hover, $secondary-pressed, $primary)
+    }
+  }
+}

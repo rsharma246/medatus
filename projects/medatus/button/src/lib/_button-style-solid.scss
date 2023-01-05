@@ -1,0 +1,41 @@
+@import './_shared/scss/variables';
+@import './_shared/scss/mixins';
+
+@mixin generate-button-solid($color, $color-hover, $color-pressed, $btn-text-color) {
+  background: $color;
+  border: 2px solid $color;
+  color: $btn-text-color;
+
+  &:hover {
+    background: $color-hover;
+    border: 2px solid $color-hover;
+  }
+
+  &:active {
+    background: $color-pressed;
+    border: 2px solid darken($color-pressed, 12%);
+    box-shadow: none;
+  }
+
+  &:disabled {
+    background: $button-disabled;
+    border: 2px solid $button-disabled;
+    color: $button-text-disabled;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
+
+@mixin generate-solid-buttons {
+  &.button-style-solid {
+    &.button-color-default {
+      @include generate-button-solid($default, $default-hover, $default-pressed, $card-background);
+    }
+    &.button-color-primary {
+      @include generate-button-solid($primary, $primary-hover, $primary-pressed, $card-background);
+    }
+    &.button-color-secondary {
+      @include generate-button-solid($secondary, $secondary-hover, $secondary-pressed, $primary);
+    }
+  }
+}
