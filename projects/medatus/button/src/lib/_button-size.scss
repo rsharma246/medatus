@@ -1,16 +1,16 @@
 @mixin generate-sized-buttons {
     &.button-size-small {
       font-size: 0.8rem;
-      padding: 0.6rem 1rem;
+      padding: 0.4rem 1.2rem;
     }
   
     &.button-size-medium {
       font-size: 1rem;
-      padding: 0.8rem 1.3rem;
+      padding: 0.6rem 1.7rem;
     }
   
     &.button-size-large {
-      font-size: 1.2rem;
-      padding: 1rem 1.5rem;
+      font-size: 1.05rem;
+      padding: 0.75rem 2rem;
     }
   }
