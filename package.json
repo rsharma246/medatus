@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0",
     "build": "ng build",
+    "build-demo": "ng build --project @medatus/demo",
+    "build-medatus": "ng build && ng build --project @medatus/demo",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
